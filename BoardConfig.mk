@@ -30,14 +30,13 @@ BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
 # Architecture
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-a
+TARGET_ARCH_VARIANT := armv8-2a-dotprod
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := kryo385
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-a
+TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
@@ -45,6 +44,9 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := kryo385
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := OnePlusN200,OnePlusN200TMO,dre
+
+# APEX
+OVERRIDE_TARGET_FLATTEN_APEX := true
 
 # Audio
 AUDIO_FEATURE_ENABLED_DLKM := true
@@ -73,7 +75,7 @@ TARGET_USES_QTI_CAMERA_DEVICE := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Display
-TARGET_SCREEN_DENSITY := 450
+TARGET_SCREEN_DENSITY := 420
 TARGET_USES_COLOR_METADATA := true
 TARGET_USES_DISPLAY_RENDER_INTENTS := true
 TARGET_USES_DRM_PP := true
@@ -114,7 +116,8 @@ BOARD_KERNEL_CMDLINE := \
     service_locator.enable=1 \
     swiotlb=0 \
     iptable_raw.raw_before_defrag=1 \
-    ip6table_raw.raw_before_defrag=1
+    ip6table_raw.raw_before_defrag=1 \
+    kpti=off
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true

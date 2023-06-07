@@ -38,3 +38,34 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=OnePlusN200
 
 BUILD_FINGERPRINT := OnePlus/OnePlusN200/OnePlusN200:12/SKQ1.210216.001/R.202304131655:user/release-keys
+
+# RisingOSS Flags
+
+# Gapps
+WITH_GMS := true
+
+# Spoof build description/fingerprint as pixel device
+TARGET_USE_PIXEL_FINGERPRINT := false
+
+# Opt out of google dialer support, compiler will build aosp dialer,
+# package type will change from PIXEL -> GMS
+TARGET_OPTOUT_GOOGLE_TELEPHONY := true
+
+# Enable Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := false
+
+# Enable Quick Tap Funtionality
+TARGET_SUPPORTS_QUICK_TAP := true
+
+# UDFPS ICONS/ANIMATIONS
+TARGET_HAS_UDFPS := false
+
+# Enable Blur
+TARGET_ENABLE_BLUR := false
+
+# Camera
+TARGET_BUILD_GRAPHENE_CAMERA := true
+
+# Official
+RISING_MAINTAINER := Travisholt92
+RICE_CHIPSET := "Snapdragon 480"
