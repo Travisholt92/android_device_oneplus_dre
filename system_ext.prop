@@ -23,6 +23,14 @@ persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
 
 # Media
+media.aac_51_output_enabled=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-http=true
+media.stagefright.enable-player=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-scan=true
+persist.mm.enable.prefetch=true
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 media.stagefright.thumbnail.prefer_hw_codecs=true
 ro.media.recorder-max-base-layer-fps=60
@@ -32,6 +40,12 @@ vendor.mm.enable.qcom_parser=4044018
 persist.data.df.agg.dl_pkt=10
 persist.data.df.agg.dl_size=4096
 persist.vendor.data.mode=concurrent
+
+# QC framework value-adds
+ro.vendor.qti.va_aosp.support=1
+
+# Qcom
+ro.vendor.qti.sys.fw.bservice_enable=true
 
 # Radio
 ril.subscription.types=NV,RUIM

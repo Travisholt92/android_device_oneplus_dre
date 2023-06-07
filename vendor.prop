@@ -80,7 +80,7 @@ persist.vendor.qcom.bluetooth.aptxadaptiver2_1_support=true
 #ro.bluetooth.a2dp_offload.supported=true
 
 # Chipset
-ro.soc.manufacturer=Qualcomm
+ro.soc.manufacturer=QTI
 ro.soc.model=SM4350
 
 # Crypto
@@ -92,15 +92,23 @@ persist.vendor.dpm.idletimer.mode=default
 persist.vendor.dpmhalservice.enable=1
 
 # Display
-vendor.display.comp_mask=0
+vendor.display.disable_scaler=0
 vendor.display.disable_excl_rect=0
 vendor.display.disable_excl_rect_partial_fb=1
-vendor.display.disable_hw_recovery_dump=1
-vendor.display.disable_offline_rotator=0
-vendor.display.enable_camera_smooth=1
-vendor.display.enable_async_powermode=0
-vendor.display.enable_early_wakeup=1
+vendor.display.disable_rotator_ubwc=1
+vendor.display.disable_layer_stitch=0
+vendor.display.comp_mask=0
 vendor.display.enable_optimize_refresh=1
+vendor.display.use_smooth_motion=1
+vendor.display.enable_async_powermode=0
+vendor.display.enable_perf_hint_large_comp_cycle=1
+vendor.display.enable_posted_start_dyn=2
+vendor.display.qdcm.mode_combine=2
+vendor.display.disable_hw_recovery_dump=0
+vendor.display.hw_recovery_threshold=5
+vendor.display.enable_early_wakeup=1
+vendor.display.disable_offline_rotator=0
+vendor.display.secure_preview_buffer_format=420_sp
 
 # DRM
 drm.service.enabled=true
@@ -112,16 +120,27 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 vendor.gatekeeper.disable_spu=true
 
 # Graphics
+debug.sf.hw=0
+debug.egl.hw=0
+debug.hwui.renderer=skiavk
+debug.mdpcomp.logs=0
 debug.sf.disable_client_composition_cache=1
 debug.sf.enable_gl_backpressure=1
-debug.sf.high_fps_early_gl_phase_offset_ns=-2000000
-debug.sf.high_fps_early_phase_offset_ns=-4000000
-debug.sf.high_fps_late_app_phase_offset_ns=1000000
+debug.sf.enable_hwc_vds=1
+debug.sf.enable_advanced_sf_phase_offset=1
 debug.sf.high_fps_late_sf_phase_offset_ns=-2000000
+debug.sf.high_fps_early_phase_offset_ns=-4000000
+debug.sf.high_fps_early_gl_phase_offset_ns=-2000000
+debug.sf.high_fps_late_app_phase_offset_ns=1000000
+debug.sf.predict_hwc_composition_strategy=0
 debug.sf.latch_unsignaled=1
+persist.demo.hdmirotationlock=false
+persist.sys.sf.color_saturation=1.0
+persist.sys.sf.color_mode=0
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.opengles.version=196610
+ro.surface_flinger.enable_layer_caching=true
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.has_HDR_display=false
 ro.surface_flinger.has_wide_color_display=false
@@ -145,9 +164,12 @@ ro.incremental.enable=yes
 # Media
 debug.stagefright.ccodec=4
 debug.stagefright.omx_default_rank=0
+media.stagefright.thumbnail.prefer_hw_codecs=true
+
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
+ro.vendor.perf.scroll_opt=0
 
 # Radio
 persist.vendor.radio.custom_ecc=1
